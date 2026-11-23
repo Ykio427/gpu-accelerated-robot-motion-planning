@@ -1,0 +1,22 @@
+{
+  "planner": "cuRobo 0.7.8",
+  "robot": "Franka Panda",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "success": true,
+  "planning_time_ms": 37.532,
+  "trajectory_points": 62,
+  "trajectory_duration_s": 1.22,
+  "joint_path_length_rad": 0.7125,
+  "max_joint_speed_rad_s": 0.7779,
+  "max_joint_acceleration_rad_s2": 4.8489,
+  "joint_motion_range_rad": {
+    "panda_joint1": 0.2007,
+    "panda_joint2": 0.0607,
+    "panda_joint3": 0.2629,
+    "panda_joint4": 0.0599,
+    "panda_joint5": 0.5955,
+    "panda_joint6": 0.1902,
+    "panda_joint7": 0.01
+  },
+  "interpolation_dt_s": 0.02
+}

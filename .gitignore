@@ -1,0 +1,77 @@
+# Python
+.venv*/
+venv/
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# CUDA / compiled extensions
+*.o
+*.a
+*.cubin
+*.ptx
+*.ninja
+build/
+dist/
+
+# ROS 2 build products
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+
+# Apptainer rootfs and generated container data
+container/rootfs/
+container/logs/
+container/*.sif
+container/*.img
+container/ros.key
+
+# Third-party source downloaded by setup scripts
+third_party/curobo/
+
+# Generated robot assets and caches
+experiments/generated/
+.cache/
+*.pyc
+
+# Keep only curated experiment artifacts
+experiments/results/*
+!experiments/results/curobo_dynamic_replanning.mp4
+!experiments/results/curobo_dynamic_replanning.png
+!experiments/results/curobo_dynamic_replanning_metrics.json
+!experiments/results/curobo_dynamic_replanning_trajectory.csv
+!experiments/results/planner_comparison.png
+!experiments/results/planner_comparison.csv
+!experiments/results/planner_comparison.json
+!experiments/results/PLANNER_COMPARISON.md
+!experiments/results/multiscene_benchmark.png
+!experiments/results/multiscene_runs.csv
+!experiments/results/multiscene_summary.json
+!experiments/results/MULTISCENE_BENCHMARK.md
+!experiments/results/panda_curobo_demo.mp4
+!experiments/results/panda_curobo_joint_plot.png
+!experiments/results/panda_curobo_metrics.json
+!experiments/results/panda_curobo_poster.png
+
+# Large downloads and archives
+*.deb
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+
+# Logs and editor files
+*.log
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local credentials and environment files
+.env
+.env.*
+*.key

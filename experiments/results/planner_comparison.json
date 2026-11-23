@@ -1,0 +1,29 @@
+{
+  "task": "Franka Panda identical start configuration and goal pose",
+  "planners": [
+    "cuRobo 0.7.8",
+    "MoveIt2 OMPL RRTConnect"
+  ],
+  "metrics": {
+    "success_rate_percent": [
+      100.0,
+      100.0
+    ],
+    "planning_latency_p50_ms": [
+      34.391164779663086,
+      42.486
+    ],
+    "planning_latency_p95_ms": [
+      37.52831220626831,
+      56.2774
+    ],
+    "mean_joint_path_length_rad": [
+      0.714361435174942,
+      2.5865
+    ],
+    "mean_trajectory_duration_s": [
+      1.2199999999999998,
+      1.5435
+    ]
+  }
+}

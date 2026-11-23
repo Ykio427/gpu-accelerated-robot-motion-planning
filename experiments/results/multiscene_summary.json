@@ -1,0 +1,20 @@
+{
+  "planner": "cuRobo 0.7.8",
+  "robot": "Franka Panda",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "random_seed": 20261123,
+  "requested_scenes": 30,
+  "successful_scenes": 28,
+  "success_rate_percent": 93.333,
+  "failed_status_counts": {
+    "NO_VALID_BLOCKER": 1,
+    "REPLAN_MotionGenStatus.IK_FAIL": 1
+  },
+  "replanning_latency_mean_ms": 86.1213,
+  "replanning_latency_p50_ms": 71.6174,
+  "replanning_latency_p95_ms": 141.5773,
+  "mean_path_length_rad": 0.687005,
+  "mean_trajectory_duration_s": 1.497857,
+  "mean_min_ee_center_distance_m": 0.13616,
+  "minimum_clearance_across_scenes_m": 0.081762
+}

@@ -1,0 +1,22 @@
+{
+  "planner": "cuRobo 0.7.8",
+  "robot": "Franka Panda",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "scenario": "dynamic obstacle enters the future path",
+  "success": true,
+  "trigger_fraction": 0.05,
+  "initial_planning_latency_ms": 140.192,
+  "replanning_latency_ms": 73.568,
+  "initial_trajectory_points": 62,
+  "replanned_trajectory_points": 62,
+  "initial_path_min_ee_center_distance_m": 0.0,
+  "replanned_path_min_ee_center_distance_m": 0.1238,
+  "dynamic_obstacle_dims_m": [
+    0.035,
+    0.035,
+    0.06
+  ],
+  "dynamic_obstacle_path_fraction": 0.541,
+  "avoidance_clearance_gain_m": 0.1238,
+  "combined_execution_points": 65
+}
