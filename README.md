@@ -15,7 +15,6 @@ The project runs GPU collision-aware trajectory generation on an RTX 4090, injec
 - ROS 2 Humble, MoveIt2, OMPL RRTConnect, and ros2_control baseline.
 - Deterministic 30-scene benchmark with CSV, JSON, plots, and Markdown reports.
 - Apptainer isolation and Slurm GPU scheduling.
-- No dependency on the separate HaMeR project.
 
 ## Demo
 
