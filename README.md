@@ -4,7 +4,7 @@ A reproducible motion-planning and dynamic-replanning project for the Franka Pan
 
 The project runs GPU collision-aware trajectory generation on an RTX 4090, injects an obstacle into the robot's future path, validates that the current state remains safe, and generates a new collision-free trajectory online.
 
-> 中文简介：这是一个面向机械臂运动规划实习岗位的完整项目，包含 GPU 轨迹优化、动态障碍重规划、MuJoCo 可视化、MoveIt2/OMPL 基线对比、30 场景批量实验和可复现报告。
+> 中文简介：该项目包含 GPU 轨迹优化、动态障碍重规划、MuJoCo 可视化、MoveIt2/OMPL 基线对比、30 场景批量实验和可复现报告。
 
 ## Highlights
 
