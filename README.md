@@ -4,7 +4,7 @@ A reproducible motion-planning and dynamic-replanning project for the Franka Pan
 
 The project runs GPU collision-aware trajectory generation on an RTX 4090, injects an obstacle into the robot's future path, validates that the current state remains safe, and generates a new collision-free trajectory online.
 
-> 中文简介：该项目包含 GPU 轨迹优化、动态障碍重规划、MuJoCo 可视化、MoveIt2/OMPL 基线对比、30 场景批量实验和可复现报告。
+> 本项目以 Franka Panda 为对象，使用 cuRobo 在 GPU 上进行运动规划与动态障碍重规划，通过 MuJoCo 回放轨迹，并在 ROS 2 模拟控制器上验证轨迹执行。项目提供 MoveIt 2 / OMPL 基线对比和 30 个固定种子场景的实验结果。
 
 ## Highlights
 
@@ -29,6 +29,7 @@ The red solid geometry is the real collision obstacle. A translucent red halo is
 ### Multi-scene dynamic replanning
 
 Thirty deterministic target and obstacle scenes were generated with random seed 20261123.
+The smallest end-effector-to-obstacle-center distance across successful scenes was **8.18 cm**. This fixed set supports repeatable regression checks. Its size limits conclusions about generalization.
 
 | Metric | Result |
 |---|---:|
@@ -40,7 +41,7 @@ Thirty deterministic target and obstacle scenes were generated with random seed 
 | Mean joint-space path length | 0.6870 rad |
 | Mean trajectory duration | 1.4979 s |
 | Mean minimum EE-center clearance | 13.62 cm |
-| Worst successful-scene clearance | **8.18 cm** |
+| Smallest EE-to-obstacle-center distance among successful scenes | **8.18 cm** |
 
 ![Multi-scene benchmark](experiments/results/multiscene_benchmark.png)
 
@@ -65,7 +66,15 @@ Both planners used the same Panda start configuration and target pose for 20 tri
 
 ![Planner comparison](experiments/results/planner_comparison.png)
 
-These numbers describe this hardware, task, and parameter set; they are not claimed as universal planner performance.
+RRTConnect is a baseline for finding a feasible path quickly. These measurements describe this task, hardware, and planner configuration.
+
+### Timing scope
+
+The cuRobo scripts warm up the planner before collecting results and report `MotionGenResult.solve_time`. The benchmark wrappers do not add a `torch.cuda.synchronize()` wall-clock measurement. World updates and blocker selection take place outside the reported solve time. The single-run initial and replan timings alone cannot isolate first-call overhead.
+
+### ROS 2 mock trajectory tracking
+
+The Panda mock controller executed 62 cuRobo waypoints and returned 59 valid action-feedback samples. The seven joint RMSE values ranged from 0.000296 to 0.003508 rad. Joint 6 had the largest absolute error, 0.007913 rad. These are measurements from one mock-controller run.
 
 ### Single dynamic obstacle run
 
@@ -275,7 +284,7 @@ The current repository is accurately described as GPU planning, ROS 2 interface 
 | [Multi-scene report](experiments/results/MULTISCENE_BENCHMARK.md) | 30-scene aggregate analysis |
 | [Multi-scene raw runs](experiments/results/multiscene_runs.csv) | Per-scene data |
 | [Planner comparison report](experiments/results/PLANNER_COMPARISON.md) | cuRobo vs. OMPL |
-| [Detailed walkthrough](PROJECT_WALKTHROUGH.md) | Chinese implementation and interview guide |
+| [Detailed walkthrough](PROJECT_WALKTHROUGH.md) | Chinese implementation guide |
 
 ## Limitations
 

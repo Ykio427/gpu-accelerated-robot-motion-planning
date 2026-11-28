@@ -82,7 +82,6 @@ ROS 2、MoveIt2 和 Foxglove 位于 Apptainer 容器：
 
     /data/yezhengfu/robot_motion_control/container/rootfs/ubuntu22
 
-HaMeR 项目没有被修改，也不参与本项目运行。
 
 ## 6. 一键复现实验
 
@@ -227,7 +226,7 @@ HaMeR 项目没有被修改，也不参与本项目运行。
 
 不要写成已经部署到真实机械臂；当前准确表述是 GPU 规划、ROS 2 接口验证和 MuJoCo 仿真。完成真机实验后再补充硬件部署经历。
 
-## 14. 面试时如何解释
+## 14. 实现原理与验证
 
 ### 项目解决了什么问题
 
