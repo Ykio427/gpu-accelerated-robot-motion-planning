@@ -286,6 +286,16 @@ The current repository is accurately described as GPU planning, ROS 2 interface 
 | [Planner comparison report](experiments/results/PLANNER_COMPARISON.md) | cuRobo vs. OMPL |
 | [Detailed walkthrough](PROJECT_WALKTHROUGH.md) | Chinese implementation guide |
 
+## Simulated depth calibration
+
+The standalone MuJoCo depth calibration can be run with
+`python experiments/mujoco_depth_fixture.py`. It renders one metric depth
+frame from a fixed overhead camera, extracts the box pixels using simulator
+geometry labels, and reconstructs the box center in a rotated and translated
+base frame. It assumes a known box height and checks the estimated center
+against simulator ground truth. The dynamic replanning benchmarks use
+programmatic obstacle injection.
+
 ## Limitations
 
 - Dynamic obstacles are injected programmatically rather than reconstructed from a live depth camera.
